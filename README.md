@@ -1,127 +1,92 @@
-# Administration-Assistant
-Your online daily assistant
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EarnHub PNG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrative Support Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
       margin: 0;
-      color: #202938;
+      background: #f4f5f7;
+      color: #222;
+      line-height: 1.6;
     }
     header {
-      background: #172b4d;
+      background: #202b3c;
       color: white;
-      padding: 22px;
       text-align: center;
+      padding: 45px 20px;
     }
     main {
-      max-width: 650px;
-      margin: 24px auto;
-      padding: 16px;
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 20px;
     }
-    .card {
+    section {
       background: white;
-      padding: 18px;
-      margin: 14px 0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #00000012;
+      padding: 22px;
+      margin-bottom: 18px;
+      border-radius: 10px;
     }
-    button {
-      background: #087f5b;
+    h2 { color: #b42332; }
+    .button {
+      display: inline-block;
+      background: #b42332;
       color: white;
-      border: 0;
-      border-radius: 7px;
-      padding: 11px 15px;
-      cursor: pointer;
+      padding: 11px 18px;
+      border-radius: 6px;
+      text-decoration: none;
     }
-    button:disabled {
-      background: #888;
-      cursor: not-allowed;
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
     }
-    .balance {
-      font-size: 28px;
-      font-weight: bold;
-      color: #087f5b;
-    }
-    small { color: #667085; }
   </style>
 </head>
 <body>
   <header>
-    <h1>EarnHub PNG</h1>
-    <p>Discover tasks. Build skills. Earn rewards.</p>
+    <h1>Administrative Support Services</h1>
+    <p>Typing | Document Formatting | Spreadsheet Support</p>
   </header>
 
   <main>
-    <section class="card">
-      <h2>Your demo balance</h2>
-      <p class="balance" id="balance">K0.00</p>
-      <small>Demo points only — not withdrawable cash.</small>
+    <section>
+      <h2>About My Services</h2>
+      <p>I provide organised, reliable administrative support
+      to small businesses and professionals.</p>
     </section>
 
-    <h2>Available tasks</h2>
-    <div id="tasks"></div>
+    <section>
+      <h2>Services Offered</h2>
+      <ul>
+        <li>Typing and document preparation</li>
+        <li>Word document formatting</li>
+        <li>PDF-to-Word conversion</li>
+        <li>Invoice and expense templates</li>
+        <li>Data entry and spreadsheet updates</li>
+      </ul>
+    </section>
 
-    <section class="card">
-      <h3>Important</h3>
-      <p>
-        This is a demonstration. Task completion and balances
-        are not verified by a server. Do not use this demo to
-        collect deposits or promise cash payouts.
-      </p>
+    <section>
+      <h2>My Portfolio</h2>
+      <p>Sample business letters, invoice templates and
+      expense trackers will be added here.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Interested in working together? Contact me to discuss
+      your project and requirements.</p>
+      <p>Please add your preferred professional contact method
+      before publishing this page.</p>
     </section>
   </main>
 
-  <script>
-    const tasks = [
-      { id: 1, title: "Try a sample task", reward: 2 },
-      { id: 2, title: "Read a learning guide", reward: 3 },
-      { id: 3, title: "Complete a practice quiz", reward: 5 }
-    ];
-
-    let balance = 0;
-    const completed = new Set();
-
-    function renderTasks() {
-      const container = document.getElementById("tasks");
-      container.innerHTML = "";
-
-      tasks.forEach(task => {
-        const card = document.createElement("section");
-        card.className = "card";
-
-        const title = document.createElement("h3");
-        title.textContent = task.title;
-
-        const reward = document.createElement("p");
-        reward.textContent = "Demo reward: K" +
-          task.reward.toFixed(2);
-
-        const button = document.createElement("button");
-        button.textContent = completed.has(task.id)
-          ? "Completed" : "Complete demo task";
-        button.disabled = completed.has(task.id);
-
-        button.addEventListener("click", () => {
-          if (completed.has(task.id)) return;
-          completed.add(task.id);
-          balance += task.reward;
-          document.getElementById("balance").textContent =
-            "K" + balance.toFixed(2);
-          renderTasks();
-        });
-
-        card.append(title, reward, button);
-        container.appendChild(card);
-      });
-    }
-
-    renderTasks();
-  </script>
+  <footer>
+    <p>Administrative Support Portfolio</p>
+  </footer>
 </body>
 </html>
